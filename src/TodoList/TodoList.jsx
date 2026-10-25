@@ -16,14 +16,18 @@ export default function TodoList() {
       };
       setTasks([...tasks, newTaskObj]);
     }
+    function completeTask(code) {
+      setTasks(tasks.map(t => t.code === code ? {...t, isCompleted: true}: t));
+    }
   return (
     <>
       <TodoForm onAddTask={addTask} />
+  
       {tasks.map((t) => (
-        <TodoItem key={t.code} task={t} />
+        <TodoItem key={t.code} task={t} onComplete={completeTask} />
       // {tasks.map(t => ( <div key={t.code}>{t.title}</div>
       ))}
     </>
-  )
+  );
 }
  
