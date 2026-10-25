@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-export default function AddTodo({onAddTask}) {
+export default function TodoForm({onAddTask}) {
 
   const [newTask, setNewTask] = useState('');
 function handleSubmit(e) {

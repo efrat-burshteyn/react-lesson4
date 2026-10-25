@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import TodoItem from '../TodoItem/TodoItem.jsx'
-import AddTodo from '../AddTodo/AddTodo.jsx';
+import TodoForm from '../TodoForm/TodoForm.jsx';
 export default function TodoList() {
     const [tasks, setTasks] = useState([
         {code:1, title: "task1", isCompleted: false},
@@ -18,7 +18,7 @@ export default function TodoList() {
     }
   return (
     <>
-      <AddTodo onAddTask={addTask} />
+      <TodoForm onAddTask={addTask} />
       {tasks.map((t) => (
         <TodoItem key={t.code} task={t} />
       // {tasks.map(t => ( <div key={t.code}>{t.title}</div>
