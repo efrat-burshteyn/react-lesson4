@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoItem from '../TodoItem/TodoItem.jsx'
 
 export default function TodoList() {
     const tasks = [{code:1, title: "task1", isCompleted: false},
@@ -6,8 +7,11 @@ export default function TodoList() {
           {code:3, title: "task3", isCompleted: false}];
   return (
     <>
-      {tasks.map(t => ( <div key={t.code}>{t.title}</div>
+      {tasks.map((t) => (
+        <TodoItem key={t.code} task={t} />
+      // {tasks.map(t => ( <div key={t.code}>{t.title}</div>
       ))}
     </>
   )
 }
+ 
